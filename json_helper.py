@@ -62,3 +62,25 @@ def write_pickle(file_path, data):
         with open(file_path, 'wb') as file:
             # Use pickle.dump to write data to the file
             pickle.dump(data, file)
+            print (f"Data is written to {file_path}")
+    except Exception as e:
+        # Handle exceptions during the file writing process
+        print(f"Error: Unable to write data to {file_path}. {e}")
+
+
+def load_pickle(file_path):
+    try:
+        # Open file path with read mode using with statement
+        with open(file_path, 'rb') as file:
+            # Use pickle.load to read data from the file
+            loaded_data = pickle.load(file)
+            return loaded_data
+    except Exception as e:
+        # Handle exceptions during the file reading process
+        print(f"Error: Can't load data from {file_path}. {e}")
+        return None
+
+
+
+
+
